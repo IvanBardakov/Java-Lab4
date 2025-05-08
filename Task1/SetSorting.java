@@ -8,7 +8,6 @@ import java.util.Arrays;
 public class SetSorting {
 
     public static void sortByTemperature(WeatherSortedSet weather) {
-        // natural ordering of Day is by temperature descending
         SortedSet<Day> newSet = new TreeSet<>();
         newSet.addAll(Arrays.asList(weather.getDays()));
         weather.setDays(newSet.toArray(new Day[0]));

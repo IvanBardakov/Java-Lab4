@@ -1,41 +1,36 @@
 package Task7;
 
-
-
 public class Task7 {
     public static void main(String[] args) {
-        System.out.println("Testing Integer DoublyLinkedList:");
-        DoublyLinkedList<Integer> intList = new DoublyLinkedList<Integer>();
-        intList.addFirst(3);
-        intList.addFirst(2);
-        intList.addLast(4);
-        intList.add(1, 1);
-        System.out.println("List: " + intList);
-        System.out.println("Size: " + intList.size());
-        System.out.println("Get index 2: " + intList.get(2));
-        intList.remove(1);
-        System.out.println("After removing index 1: " + intList);
-        System.out.println();
-
-        System.out.println("Testing String DoublyLinkedList:");
-        DoublyLinkedList<String> stringList = new DoublyLinkedList<String>();
-        stringList.add("Apple");
-        stringList.add("Banana");
-        stringList.add("Cherry");
-        System.out.println("List: " + stringList);
-        System.out.println("Size: " + stringList.size());
-        stringList.set(1, "Blueberry");
-        System.out.println("After setting index 1 to Blueberry: " + stringList);
-        System.out.println();
-
-        System.out.println("Testing Double DoublyLinkedList:");
-        DoublyLinkedList<Double> doubleList = new DoublyLinkedList<Double>();
-        doubleList.add(1.1);
-        doubleList.add(2.2);
-        doubleList.add(3.3);
-        System.out.println("List: " + doubleList);
-        System.out.println("Contains 2.2? " + doubleList.contains(2.2));
-        doubleList.remove(0);
-        System.out.println("After removing index 0: " + doubleList);
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<Integer>();
+        System.out.println("Test 1: Adding elements");
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.addFirst(0);
+        System.out.println("List after adding: " + list);
+        System.out.println("Size: " + list.size());
+        System.out.println("\nTest 2: Adding at index");
+        list.add(2, 10);
+        System.out.println("List after adding 10 at index 2: " + list);
+        System.out.println("\nTest 3: Getting elements");
+        System.out.println("Element at index 2: " + list.get(2));
+        System.out.println("Element at index 0: " + list.get(0));
+        System.out.println("\nTest 4: Updating elements");
+        list.set(1, 100);
+        System.out.println("List after updating element at index 1: " + list);
+        System.out.println("\nTest 5: Removing elements");
+        System.out.println("Removed first element: " + list.removeFirst());
+        System.out.println("List after removing first element: " + list);
+        System.out.println("Removed last element: " + list.removeLast());
+        System.out.println("List after removing last element: " + list);
+        System.out.println("Removed element at index 1: " + list.remove(1));
+        System.out.println("List after removing element at index 1: " + list);
+        System.out.println("\nTest 6: Checking empty list");
+        while (!list.isEmpty()) {
+            list.removeFirst();
+        }
+        System.out.println("List after removing all elements: " + list);
+        System.out.println("Is list empty? " + list.isEmpty());
     }
 }

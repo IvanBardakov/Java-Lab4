@@ -6,7 +6,6 @@ import java.util.Comparator;
 
 class Task1 {
     public static void main(String[] args) {
-        // Create sample data
         WeatherArrayList listWeather = new WeatherArrayList("Summer", "Summer weather");
         WeatherSortedSet setWeather = new WeatherSortedSet("Summer", "Summer weather", Comparator.naturalOrder());
 
@@ -16,7 +15,6 @@ class Task1 {
                 new Day(LocalDate.of(2025, 7, 3), 35.2, "Heavy rain throughout the day with strong winds"),
                 new Day(LocalDate.of(2025, 7, 4), 29.0, "Light showers"),
         };
-        // Populate both structures
         for (Day d : sampleDays) {
             listWeather.addDay(d);
             setWeather.addDay(d);
