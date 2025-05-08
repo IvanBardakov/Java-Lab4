@@ -3,7 +3,8 @@ package Task2;
 public class ArrayUtils {
     public static <T> void swapGroups(T[] array, int start1, int length1, int start2, int length2) {
         if (start1 + length1 > array.length || start2 + length2 > array.length || start1 < 0 || start2 < 0) {
-            throw new IllegalArgumentException("Invalid group bounds");
+            System.out.println("Invalid group bounds");
+            return;
         }
         for (int i = 0; i < Math.min(length1, length2); i++) {
             T temp = array[start1 + i];
@@ -22,7 +23,8 @@ public class ArrayUtils {
 
     public static <T> void replaceGroup(T[] array, int start, T[] replacement) {
         if (start < 0 || start + replacement.length > array.length) {
-            throw new IllegalArgumentException("Invalid replacement bounds");
+            System.out.println("Invalid replacement bounds");
+            return;
         }
         System.arraycopy(replacement, 0, array, start, replacement.length);
     }
